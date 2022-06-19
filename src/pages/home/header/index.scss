@@ -33,5 +33,18 @@
         .logo-section{
             z-index: 999;
         }
+        .search-bar-home{
+            z-index: 999;
+            .MuiFilledInput-root{
+                button{
+                    svg{
+                        path{
+                            stroke: $white;
+                            fill: $white;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

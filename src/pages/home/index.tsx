@@ -11,9 +11,9 @@ export const Home = () => {
   return (
     <div className='home-content'>
       <HeaderHome /> 
-       <SliderHome />
-       <img className='img-banner' src={back} alt=""/>
-       <AwardsMovies />
+      <SliderHome />
+      <AwardsMovies />
+       
     </div>
   )
 };

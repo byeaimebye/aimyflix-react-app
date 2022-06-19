@@ -1,34 +1,70 @@
 import React, { useEffect, useState } from "react";
 
-import { Box } from '@mui/material';
+import { Box, Button, IconButton, Typography } from '@mui/material';
 import { useTheme } from "@mui/material/styles";
 import { autoPlay } from "react-swipeable-views-utils";
 import SwipeableViews from "react-swipeable-views";
 import axios from "axios";
 import { API_URL } from "../../../utils";
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+
+import "./index.scss";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 export const SliderHome = () => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-
+  const [movies, setMovies] = useState<MoviesData[]>([]);
   
   const dataMoviesSlider = async () => {
     const { data } = await axios.get(`${API_URL}/discover/movie`, {
       params: {
         api_key: process.env.REACT_APP_MOVIE_API_KEY
       }
-    })
-    console.log(data)
-  }
+    });
+    setMovies(data.results);
+  };
 
   useEffect(()=>{
     dataMoviesSlider();
-  }, [])
-  return (
-    <Box>
+  }, []);
 
-    </Box>
+  interface MoviesData {
+    id: number;
+    backdrop_path: string;
+    title: string;
+    overview: string;
+  };
+
+  const handleStepChange = (step: number) => {
+    setActiveStep(step);
+  };
+  console.log(movies)
+
+  return (
+    <div className="slider-home">
+      <AutoPlaySwipeableViews
+                interval={7000}
+                enableMouseEvents
+                axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+                index={activeStep}
+                onChangeIndex={handleStepChange}
+            >
+              {movies.map((movie: MoviesData) => {
+                  return <div className="slider-box">
+                      <div className="data-box">
+                        <Typography className="title-box">{movie.title}</Typography>
+                        <Typography className="description-box" variant="caption">{movie.overview}</Typography>
+                        <div className="buttons-box">
+                          <Button className="play-button" variant="contained">Reproducir</Button>
+                          <Button className="information-button" variant="contained">Mas informacion <InfoOutlinedIcon /></Button>
+                        </div>
+                      </div>
+                      <img key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt="" />
+                  </div>
+                  })}
+      </AutoPlaySwipeableViews>
+    </div>
   )
 }

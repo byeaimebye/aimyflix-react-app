@@ -1,0 +1,35 @@
+
+.slider-home{
+    margin-top: -77px;
+    .react-swipeable-view-container{
+        position: relative;
+        div > {
+            img{
+                width: 100%;
+            }
+        }
+        .slider-box{
+            .data-box{
+                position: absolute;
+                width: 45%;
+                margin-left: 20px;
+                margin-top: 20%;
+                .description-box{
+                    width: 50px;
+                    color: white;
+                }
+                .title-box{
+                    width: 100%;
+                    color: white;
+                    font-size: 55px;
+                }
+                .buttons-box{
+                    margin-top: 20px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+            }
+        }
+    }
+}
