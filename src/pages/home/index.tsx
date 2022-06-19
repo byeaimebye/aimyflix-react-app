@@ -2,7 +2,7 @@ import React from 'react'
 import { HeaderHome } from './header'
 import { SliderHome } from './slider';
 import back from "../../assets/image.png";
-import { AwardsMovies } from './awards';
+import { SearchMovies } from './search';
 
 import "./index.scss";
 
@@ -12,8 +12,7 @@ export const Home = () => {
     <div className='home-content'>
       <HeaderHome /> 
       <SliderHome />
-      <AwardsMovies />
-       
+      <SearchMovies />
     </div>
   )
 };

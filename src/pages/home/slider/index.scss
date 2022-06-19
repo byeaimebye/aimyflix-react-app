@@ -1,3 +1,4 @@
+@import "../../../colors/index.scss";
 
 .slider-home{
     margin-top: -77px;
@@ -17,17 +18,22 @@
                 .description-box{
                     width: 50px;
                     color: white;
+                    font-size: 12px;
+                    font-weight: 600;
                 }
                 .title-box{
                     width: 100%;
                     color: white;
-                    font-size: 55px;
+                    font-size: 45px;
                 }
                 .buttons-box{
                     margin-top: 20px;
                     width: 100%;
                     display: flex;
                     justify-content: space-evenly;
+                    .MuiButtonBase-root{
+                        background-color: $button-background;
+                    }
                 }
             }
         }

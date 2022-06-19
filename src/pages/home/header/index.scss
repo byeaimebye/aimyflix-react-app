@@ -8,9 +8,8 @@
         flex-direction: inherit;
         align-items: center;
         justify-content: space-between;
-        background-color: $transparent;
-        background-blend-mode: darken;
-        box-shadow: inset 0px 10px 5px rgba(0, 0, 0, 0.25);
+        background: radial-gradient(100% 100% at 49.85% 0%, #151515 0%, rgba(26, 26, 26, 0.66) 48.44%, rgba(98, 89, 89, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+        background-blend-mode: color-burn;
         .options-header{
             display: grid;
             width: 50%;
@@ -26,7 +25,8 @@
                 align-items: center;
                 list-style: none;
                 &:hover{
-                    background-color: black;
+                    background: radial-gradient(100% 100% at 49.85% 0%, #151515 0%, rgba(98, 89, 89, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+                    background-blend-mode: color-burn;
                 }
         }
     }

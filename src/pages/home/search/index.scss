@@ -1,0 +1,44 @@
+@import "../../../colors/index.scss";
+
+
+.search-content{
+    background-color: $button-background;
+    border-radius: 45px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .all-search-container{
+        display: flex;
+        flex-wrap: wrap;
+        background-color: $black;
+        justify-content: space-around;
+        align-items: center;
+        img{
+            width: 350px;
+            height: 250px;
+        }
+    }
+    .search-movies{
+        border-radius: 45px;
+        height: 555px;
+        background-image: url("../../../assets/jonny-back.png");
+        background-position: fixed;
+        background-size: cover;
+        .title-search{
+            font-family: $title-font;
+            color: $black;
+            font-weight: 700;
+            margin-top: 50px;
+        }
+        .MuiFilledInput-root{
+            button{
+                svg{
+                    path{
+                        stroke: $white;
+                        fill: $white;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 @import "../../colors/index.scss";
 
 .home-content{
+    font-family: $title-font;
     background-color: $black;
     padding: 0 15px 0 15px;
     .img-banner{

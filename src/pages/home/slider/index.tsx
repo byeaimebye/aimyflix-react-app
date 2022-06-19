@@ -16,6 +16,7 @@ export const SliderHome = () => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const [movies, setMovies] = useState<MoviesData[]>([]);
+  const [information, setInformation] = useState(false);
   
   const dataMoviesSlider = async () => {
     const { data } = await axios.get(`${API_URL}/discover/movie`, {
@@ -35,13 +36,18 @@ export const SliderHome = () => {
     backdrop_path: string;
     title: string;
     overview: string;
+    vote_count: number;
   };
 
   const handleStepChange = (step: number) => {
     setActiveStep(step);
+    setInformation(false);
   };
-  console.log(movies)
-
+  
+  const onClickInformation = () => {
+    setInformation(true);
+  };
+ 
   return (
     <div className="slider-home">
       <AutoPlaySwipeableViews
@@ -55,10 +61,14 @@ export const SliderHome = () => {
                   return <div className="slider-box">
                       <div className="data-box">
                         <Typography className="title-box">{movie.title}</Typography>
-                        <Typography className="description-box" variant="caption">{movie.overview}</Typography>
+                        {information && <Typography className="description-box" variant="caption">{movie.overview}</Typography>}
                         <div className="buttons-box">
                           <Button className="play-button" variant="contained">Reproducir</Button>
-                          <Button className="information-button" variant="contained">Mas informacion <InfoOutlinedIcon /></Button>
+                          <Button className="information-button" 
+                            variant="contained" 
+                            onClick={onClickInformation}
+                            >Mas informacion <InfoOutlinedIcon />
+                          </Button>
                         </div>
                       </div>
                       <img key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt="" />
