@@ -1,0 +1,37 @@
+@import "/src/colors/index.scss";
+
+.header{
+    z-index: 999;
+    .MuiAppBar-root{
+        z-index: 999;
+        display: flex;
+        flex-direction: inherit;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $transparent;
+        background-blend-mode: darken;
+        box-shadow: inset 0px 10px 5px rgba(0, 0, 0, 0.25);
+        .options-header{
+            display: grid;
+            width: 50%;
+            grid-template-columns: 1fr 1fr 1fr 1.5fr;
+            z-index: 999;
+            align-items: center;
+            .header-list-item{
+                display: flex;
+                cursor: pointer;
+                justify-content: center;
+                text-align: center;
+                height: 48px;
+                align-items: center;
+                list-style: none;
+                &:hover{
+                    background-color: black;
+                }
+        }
+    }
+        .logo-section{
+            z-index: 999;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@import "../../colors/index.scss";
+
+.home-content{
+    background-color: $black;
+    padding: 0 15px 0 15px;
+    .img-banner{
+        width: 100%;
+        margin-top: -77px;
+    }
+}
