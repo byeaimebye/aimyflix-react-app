@@ -27,18 +27,23 @@
         .title-search{
             font-family: $title-font;
             color: $black;
+            margin-bottom: 70px;
             font-weight: 700;
             margin-top: 50px;
         }
+        .subtitle-search{
+            font-size: 35px;
+            color: $white;
+            margin-bottom: 30px;
+        }
         .MuiFilledInput-root{
-            button{
-                svg{
-                    path{
-                        stroke: $white;
-                        fill: $white;
-                    }
-                }
+            background-color: $white;
+            width: 350px;
+            border-radius: 55px;
+            &:before, &:after{
+                border-bottom: 0px;
             }
+
         }
     }
 }
