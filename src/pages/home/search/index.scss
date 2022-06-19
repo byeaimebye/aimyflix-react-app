@@ -8,15 +8,41 @@
     flex-direction: column;
     width: 100%;
     .all-search-container{
+        padding-top: 55px;
         display: flex;
         flex-wrap: wrap;
         background-color: $black;
         justify-content: space-around;
         align-items: center;
-        img{
-            width: 350px;
-            height: 250px;
+        .search-movie-box{
+            margin-bottom: 10px;
+            position: relative;
+            .MuiTypography-root{
+                position: absolute;
+                background-color: $button-background;
+                color: $white;
+                width: 100%;
+                font-size: 20px;
+            }
+            img{
+                width: 350px;
+                height: 250px;
+            }
+            button{
+                position: absolute;
+                bottom: 5px;
+                width: 100%;
+                background-color: $button-background;
+                color: $white;
+                border: none;
+                border-radius: initial;
+                &:hover{
+                    background-color: $white;
+                    color: $black;
+                }
+            }
         }
+        
     }
     .search-movies{
         border-radius: 45px;
@@ -44,6 +70,13 @@
                 border-bottom: 0px;
             }
 
+        }
+        .search-appear{
+            margin-top: 15px;
+            .MuiTypography-root{
+                color: $white;
+                font-size: 20px;
+            }
         }
     }
 }

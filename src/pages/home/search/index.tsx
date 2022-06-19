@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { Box, FilledInput, IconButton, InputAdornment, Typography } from '@mui/material';
+import { Box, Button, FilledInput, IconButton, InputAdornment, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import axios from 'axios';
 import { API_URL } from '../../../utils';
@@ -75,6 +75,7 @@ export const SearchMovies = () => {
           {moviesSearch.map((movie: moviesSearchResponse) => {
           return <Box className='search-movie-box' key={movie.id}>
                   <Typography>{movie.title}</Typography>
+                  <Button variant="outlined">Ver más</Button>
                   <img src={movie.backdrop_path ? `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}` : notImage} alt="movie"/>
             </Box> 
           })}
