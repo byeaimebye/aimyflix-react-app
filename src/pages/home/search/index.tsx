@@ -64,11 +64,14 @@ export const SearchMovies = () => {
               </InputAdornment>
           }
         />
-          {inputSearch && 
+         {moviesSearch.length === 0 ?
             <div className='search-appear'>
-              <Typography>Estos son los resultados de {inputSearch}</Typography>
-              <Lottie options={defaultOptions}  width={100} height={100} />
-            </div>
+              <Typography>No encontramos resultados para {inputSearch}</Typography>
+            </div> :
+             <div className='search-appear'>
+             <Typography>Estos son los resultados de {inputSearch}</Typography>
+             <Lottie options={defaultOptions}  width={100} height={100} />
+           </div>
           }
         </div>
         <div className='all-search-container'>
